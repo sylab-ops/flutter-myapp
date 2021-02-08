@@ -45,6 +45,7 @@ android {
         targetSdkVersion 29
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+        
         signingConfigs {
             release {
                 if (System.getenv()["CI"]) { // CI=true is exported by Codemagic
@@ -59,32 +60,32 @@ android {
                     keyPassword "password"
                 }
             }
-    }
+        }
 
-    buildTypes {
-        release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig signingConfigs.debug
+        buildTypes {
+            release {
+                // TODO: Add your own signing config for the release build.
+                // Signing with the debug keys for now, so `flutter run --release` works.
+                signingConfig signingConfigs.debug
 
-            firebaseAppDistribution {
-                releaseNotesFile="../Users/sylab/.android/debug.keystore"
-                testers="arnold@nevercode.io, abraham.sylvester.dev@gmail.com"
-            }
+                firebaseAppDistribution {
+                    releaseNotesFile = "../Users/sylab/.android/debug.keystore"
+                    testers = "arnold@nevercode.io, abraham.sylvester.dev@gmail.com"
+                }
 
                 release {
                     signingConfig signingConfigs.release
+                }
             }
         }
     }
-}
 
-flutter {
-    source '../..'
-}
-
-dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-        }
+    flutter {
+        source '../..'
     }
+
+    dependencies {
+        implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    }
+}
 
