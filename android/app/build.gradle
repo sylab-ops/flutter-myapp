@@ -68,7 +68,7 @@ android {
             signingConfig signingConfigs.debug
 
             firebaseAppDistribution {
-                releaseNotesFile="/Users/sylab/flutter_apps/myapp/android/app/releasen.txt"
+                releaseNotesFile="../app/release.txt"
                 testers="arnold@nevercode.io, abraham.sylvester.dev@gmail.com"
             }
 
