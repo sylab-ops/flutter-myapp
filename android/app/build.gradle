@@ -66,10 +66,12 @@ android {
             // TODO: Add your own signing config for the release build.
             // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig signingConfigs.debug
-            firebaseAppDistribution{
-                serviceCredentialsFile="./myapp/app/google-services.json"
-                releaseNotesFile="../verion-1.0.5 release-notes.txt"
-                testers="arnold@nevercode.io"
+
+            firebaseAppDistribution {
+                releaseNotesFile="/Users/sylab/flutter_apps/myapp/android/app/releasen.txt"
+                testers="arnold@nevercode.io, abraham.sylvester.dev@gmail.com"
+            }
+
                 release {
                     signingConfig signingConfigs.release
             }
